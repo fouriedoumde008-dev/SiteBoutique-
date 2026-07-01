@@ -1,0 +1,239 @@
+<!DOCTYPE html> 
+<html lang="fr"> 
+   <head> 
+     <meta charset="UTF-8"> 
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+     <title>e-commerce</title> 
+     <link rel="stylesheet" href="capacté.css">  
+   </head>
+   <body>
+      <header class="site-header"> 
+       <form action="search-bar">
+          <input type="text" id="search" placeholder="Rechercher des produits">
+          <button type="submit">recherche</button>
+          <ul id="search-results-list" class="search-dropdow hidden"></ul>
+       </form>
+       <h1 style="color: #f59608; font-size: 25px;">BIENVENU DANS LE POINT DE VENTE</h1>
+          <nav class="user-nav">
+           <a href="#Annonce" style="text-align: left;"> Annonce</a>
+           <a href="#Boutique" style="text-align: left;">Boutique</a>
+           <a href="#Vendre" style="text-align: left;">Vendre</a>
+         </nav>
+         <div class="user-icon-">
+           <span class="icon-cart">
+            <h1>🛒<span id="compteur">0</span></h1>
+             <button  onclick="afficherCompteur()">Panier</button>
+             <div id="Panier" style="display: none;">Cliquer</div>
+           </span>
+           <span class="icon-account">
+             <h1>👤</h1>
+             <p>compte</p>
+           </span>
+        </div>
+      </header>
+      <main>
+        <section class="domini" >
+         <h2 style="font-size: 50px; text-align: center;"><strong style="color: black;">ICI NOUS VENDONS </strong><strong style="color: hsl(19, 97%, 45%);">
+           DES PRODUITS ADORABLES ET</strong><strong style="color: blue;"> DE CLASSE</strong>
+         </h2>
+         <button>Explorer</button>
+        </section>
+        <section class="produits-section">
+          <h2><strong>COMMANDER  <strong style="color: blue;"> LES MEILLEURS PRODUITS 
+           </strong> <strong style="color: yellow;"> DE N'DJAMENA <strong style="color: red;">TCHAD</strong>
+         </h2>
+         <div class="produit-grid" id="facture-produits"> 
+           <div class="produit-card" data-category="montres"> 
+             <img src="images/V.jpg" alt= "baskette" class="produit-image">
+             <h3 class="produit-tittle">Classique Hite Toire</h3>
+             <p class="produit-price">10000FC</p>
+                 <div class="produit-ratting">🔅🔅🔅🔅</div>
+             <button class="add-to-cart" onclick="AjouterPanier({id:1, nom:'Classique Hite', prix: 10000})">Ajouter</button>
+           </div>
+           <div class="produit-card" data-category="ordinateurs">
+             <img src="images/CléInternet.jpg" alt=" ordinateurs portables" class="produit-image">
+             <h3 class="produit-tittle">Clé internet</h3>
+             <p class="produit-price"> 3200FC</p>
+             <div class="produit-ratting">🔅🔅🔅🔅</div>
+             <button class="add-to-cart" onclick="AjouterPanier({id:2, nom: 'Clé internet', prix: 11500})">Ajouter</button>
+            </div>
+            <div class="produit-card" data-category="Shirth"> 
+             <img src="images/ThNoir.jpg" alt= "T-Shirth" class="produit-image">
+             <h3 class="produit-tittle">Shirth free</h3>
+             <p class="produit-price">5000FC</p>
+             <div class="produit-ratting">🔅🔅🔅🔅</div>
+             <button class="add-to-cart" onclick="AjouterPanier({id:3, nom:'T-Shirth', prix: 5000})">Ajouter</button>
+           </div>
+           <div class="produit-card" data-category="Pro T-Shirth"> 
+             <img src="images/tShirth.jpg" alt= "shirth" class="produit-image">
+             <h3 class="produit-tittle">T-shirth pro</h3>
+             <p class="produit-price">7000FC</p>
+             <div class="produit-ratting">🔅🔅🔅🔅</div>
+             <button class="add-to-cart" onclick="AjouterPanier({id:4, nom:'T-Shirth', prix: 7000})">Ajouter</button>
+           </div>
+           <div class="produit-card" data-category="Pro T-Shirth"> 
+             <img src="images/Samsung.jpg" alt= "Samsung" class="produit-image">
+             <h3 class="produit-tittle">Free king</h3>
+             <p class="produit-price">7500FC</p>
+             <div class="produit-ratting">🔅🔅🔅🔅</div>
+             <button class="add-to-cart" onclick="AjouterPanier({id:5, nom:'Samsung', prix: 7500})">Ajouter</button>
+           </div>
+           <div class="produit-card" data-category="Veste"> 
+             <img src="images/CouvreDame.jpg" alt= "CouvreDame" class="produit-image">
+             <h3 class="produit-tittle">Couvre P</h3>
+             <p class="produit-price">9000FC</p>
+             <div class="produit-ratting">🔅🔅🔅🔅</div>
+             <button class="add-to-cart" onclick="AjouterPanier({id:6, nom:'CouvreDame', prix: 9000})">Ajouter</button>
+           </div>
+           <div class="produit-card" data-category="Veste"> 
+             <img src="images/OrdinateurLinux.jpg" alt= "Linux" class="produit-image">
+             <h3 class="produit-tittle">New</h3>
+             <p class="produit-price">12500FC</p>
+             <div class="produit-ratting">🔅🔅🔅🔅</div>
+             <button class="add-to-cart" onclick="AjouterPanier({id:7, nom:'Linux', prix: 12500})">Ajouter</button>
+           </div>
+           <div class="produit-card" data-category="Veste"> 
+              <img src="images/ProCheveux.jpg" alt= "Pro ch" class="produit-image">
+              <h3 class="produit-tittle">Pro Cheveux</h3>
+              <p class="produit-price">12000FC</p>
+              <div class="produit-ratting">🔅🔅🔅🔅</div>
+              <button class="add-to-cart" onclick="AjouterPanier({id:8, nom:'Produit Cheveux lisse', prix: 12000})">Ajouter</button>
+           </div>
+           <div class="produit-card" data-category="Veste"> 
+              <img src="images/Chaussure Dame.jpg" alt= "Chaussure" class="produit-image">
+              <h3 class="produit-tittle">Proc</h3>
+              <p class="produit-price">35000FC</p>
+             <div class="produit-ratting">🔅🔅🔅🔅</div>
+             <button class="add-to-cart"  onclick="AjouterPanier({id:9, nom:'Chaussure Dame', prix: 35000})">Ajouter</button>
+           </div>
+           <div class="produit-card" data-category="Veste"> 
+             <img src="images/SackMain.jpg" alt= "Sack à main" class="produit-image">
+             <h3 class="produit-tittle">Sack à main</h3>
+             <p class="produit-price">3400FC</p>
+             <div class="produit-ratting">🔅🔅🔅🔅</div>
+             <button class="add-to-cart" onclick="AjouterPanier({id:10, nom:'Sack à main', prix: 34000})">Ajouter</button>
+            </div>
+           <div class="produit-card" data-category="Veste"> 
+             <img src="images/GameBASKette.jpg" alt= "GameBASKette" class="produit-image">
+             <h3 class="produit-tittle">Chaussure baskette</h3>
+             <p class="produit-price">9000FC</p>
+             <div class="produit-ratting">🔅🔅🔅🔅</div>
+             <button class="add-to-cart" onclick="AjouterPanier({id: 11, nom:'Chaussure baskette', prix: 1900})">Ajouter</button>
+           </div>
+           <div class="produit-card" data-category="Veste"> 
+             <img src="images/Nickel.jpg" alt= "Nickel" class="produit-image">
+             <h3 class="produit-tittle">New</h3>
+             <p class="produit-price">7000FC</p>
+             <div class="produit-ratting">🔅🔅🔅🔅</div>
+             <button class="add-to-cart"  onclick="AjouterPanier({id:12, nom:'New', prix: 7800})">Ajouter</button>
+           </div>
+           <div class="produit-card" data-category="Veste"> 
+             <img src="images/Tennis baskette.jpg" alt= "Tennis" class="produit-image">
+             <h3 class="produit-tittle">Free</h3>
+             <p class="produit-price">30300FC</p>
+             <div class="produit-ratting">🔅🔅🔅🔅</div>
+             <button class="add-to-cart"  onclick="AjouterPanier({id:13, nom:'Tennis baskette', prix: 30300})">Ajouter</button>
+            </div>
+           <div class="produit-card" data-category="Veste"> 
+             <img src="images/DIOKYpRO.jpg" alt= "Pro" class="produit-image">
+             <h3 class="produit-tittle">Frais</h3>
+             <p class="produit-price">6000FC</p>
+             <div class="produit-ratting">🔅🔅🔅🔅</div>
+             <button class="add-to-cart" onclick="AjouterPanier({id: 14, nom:'Frais', prix: 6000})">Ajouter</button>
+           </div>
+           <div class="produit-card" data-category="Veste"> 
+              <img src="images/DIOKY.jpg" alt= "tioki" class="produit-image">
+             <h3 class="produit-tittle">Dioky</h3>
+             <p class="produit-price">7500FC</p>
+             <div class="produit-ratting">🔅🔅🔅🔅</div>
+             <button class="add-to-cart" onclick="AjouterPanier({id:15, nom:'Dioky', prix: 12400})">Ajouter</button>
+           </div>
+           <div class="produit-card" data-category="Veste"> 
+              <img src="images/V.jpg" alt= "N" class="produit-image">
+             <h3 class="produit-tittle">Game</h3>
+             <p class="produit-price">10000FC</p>
+             <div class="produit-ratting">🔅🔅🔅🔅</div>
+             <button class="add-to-cart" onclick="AjouterPanier({id:16, nom:'Game', prix:10000})">Ajouter</button>
+           </div>
+           <div class="produit-card" data-category="Veste"> 
+              <img src="images/salleInfo.jpg" alt= "B" class="produit-image">
+             <h3 class="produit-tittle">salle Informatique</h3>
+             <p class="produit-price">2200000FC</p>
+             <div class="produit-ratting">🔅🔅🔅🔅</div>
+             <button class="add-to-cart" onclick="AjouterPanier({id:17, nom:'salle Informatique', prix:6500})">Ajouter</button>
+           </div>
+           <div class="produit-card" data-category="Veste"> 
+              <img src="images/CouvreKing.jpg" alt= "Couvre" class="produit-image">
+             <h3 class="produit-tittle">Couvre King</h3>
+             <p class="produit-price">12000FC</p>
+             <div class="produit-ratting">🔅🔅🔅🔅</div>
+             <button class="add-to-cart" onclick="AjouterPanier({id:18, nom:'Couvre King', prix:12000})">Ajouter</button>
+           </div>
+           <div class="produit-card" data-category="Veste"> 
+              <img src="mages/W.jpg" alt= "W" class="produit-image">
+             <h3 class="produit-tittle">Reina</h3>
+             <p class="produit-price">9500FC</p>
+             <div class="produit-ratting">🔅🔅🔅🔅</div>
+             <button class="add-to-cart" onclick="AjouterPanier({id:19, nom:'Reina', prix:9500})">Ajouter</button>
+           </div>
+           <div class="produit-card" data-category="Veste"> 
+              <img src="images/V.jpg" alt= "V" class="produit-image">
+             <h3 class="produit-tittle">Respo</h3>
+             <p class="produit-price">14000FC</p>
+             <div class="produit-ratting">🔅🔅🔅🔅</div>
+             <button class="add-to-cart" onclick="AjouterPanier({id:20, nom:'Respo', prix:14000})">Ajouter</button>
+           </div>
+           <div class="produit-card" data-category="Veste"> 
+              <img src="images/SM A17.jpg" alt= "A17" class="produit-image">
+             <h3 class="produit-tittle">Samsung A17</h3>
+             <p class="produit-price">8000FC</p>
+             <div class="produit-ratting">🔅🔅🔅🔅</div>
+             <button class="add-to-cart" onclick="AjouterPanier({id:21, nom:'A17', prix:8000})">Ajouter</button>
+           </div>
+          </div>
+        </section>
+        <section class="site-paie"> 
+          <h3>Vos informations de Livraison</h3>
+          <p><strong>Remplissez ce formulaire pour achèver votre commande</strong></p>
+         <div class="form-row">
+            <form action="formulaire">
+              <label for="nom">Nom</label>
+              <input type="text" id="lastName" name="nom" placeholder="Votre nom"> 
+              <label for="numero">Numéro de téléphone</label>
+              <input id="phone" name="numero" placeholder="Ex: 6XX XXX XXX" type="tel">
+              <label for="ville">Ville</label>
+              <input name="ville" id="orderCity" placeholder="Votre ville" type="text">
+              <label for="quartier">Quartier</label>
+              <input type="text" name="quartier" id="district" placeholder="Votre quartier">
+             <label class="order-label">Adresse complète</label>
+              <input class="order-input" id="address" placeholder="Rue, numéro, repère...">
+              <label for="paie">Méthode de paiemant</label>
+              <select name="paiement" id="paiement">
+                <option value="1">...Choisir...</option>
+                <option value="MoMo">MTN Mobile Money</option>
+                <option value="OM">Orange Money</option>
+                <option value="PAL">Paiement à la livraison</option>
+                <option value="cart-bancaire">Virement bancaire</option>
+                <option value="AM">Airtel Money</option>
+             </select>
+             <button type="submit">Envoyer</button>
+           </form>
+         </div>
+       </section>
+       <section class="cta-banner">
+         <h2 style="font-size: 200%;"> Créez une annonce gratuitement!</h2>
+         <button onclick="AjouterAnnonce({id:15, nom:'Dioky', prix: 1240})">gratuitement!</button>
+        </section>
+     </main>
+     <footer class="main-footer">
+        <p><strong>&copy; 2026 AD-SHOP.</strong> tous droits réversés.</p>
+        <nav class="footer-nav">
+         <a href="#">A propos</a>
+         <a href="#">Contact</a>
+         <a href="#">Mentions légales</a>
+        </nav>
+     </footer>
+     <script src="fourieTESTE.js"></script> 
+   </body> 
+  </html> 
+ 
